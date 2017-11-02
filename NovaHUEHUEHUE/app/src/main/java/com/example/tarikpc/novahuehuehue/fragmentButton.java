@@ -1,22 +1,16 @@
-package com.example.tarikpc.aatdiscutioncc1;
+package com.example.tarikpc.novahuehuehue;
 
 import android.app.Fragment;
-import android.content.Context;
-import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.ViewParent;
 import android.widget.Button;
 
 import io.realm.Realm;
 
-import static android.app.Activity.RESULT_OK;
-
 /**
- * Created by Tarik PC on 26-10-17.
+ * Created by Tarik PC on 02-11-17.
  */
 
 public class fragmentButton extends Fragment {
@@ -31,8 +25,8 @@ public class fragmentButton extends Fragment {
             public void onClick(View v) {
                 realm = Realm.getDefaultInstance();
                 realm.beginTransaction();
-                Pokusaj pokusaj = realm.createObject(Pokusaj.class);
-                pokusaj.setRezultat("Ober");
+                Rezultat rezultat = realm.createObject(Rezultat.class);
+                rezultat.setRez(true);
                 realm.commitTransaction();
                 getActivity().finish();
             }
@@ -40,3 +34,4 @@ public class fragmentButton extends Fragment {
         return view;
     }
 }
+
