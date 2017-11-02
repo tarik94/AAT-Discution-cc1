@@ -107,7 +107,8 @@ public class MainActivity extends AppCompatActivity{
         testApiDogs.getAll().enqueue(new Callback<Dogs>() {
             @Override
             public void onResponse(Call<Dogs> call, Response<Dogs> response) {
-                Log.d("kerovi",response.body().getStatus());
+                //Log.d("kerovi",response.body().getStatus());
+                builder.setTitle("Rezultat").setMessage(response.body().getStatus()).show();
             }
 
             @Override
